@@ -2,4 +2,3 @@
 * text=auto
 $ dll .gitattributes
 *.dll linguist-language=csharp       
-*.esp linguist-language=papyrus
