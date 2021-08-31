@@ -4,4 +4,4 @@ Currently, I have modded Skyrim and GTAV, looking into modding Cyberpunk 2077 to
 
 Skyrim - Skyrim Creation Kit
 
-GTA V - C# using Scripthook.API
+GTA V - C# using Scripthook.API (https://dev-c.com/GTAV/scripthookv)
