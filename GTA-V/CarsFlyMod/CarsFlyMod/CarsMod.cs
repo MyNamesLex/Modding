@@ -20,10 +20,11 @@ namespace CarsFlyMod
         //public UIMenu mainMenu;
 
 
-        public bool PressedE = false; // Toggle Car Push
-        public bool PressedT = false; // Toggle Car Pull
+        public bool PressedE = false; // Toggle Car Pull
+        public bool PressedT = false; // Toggle Car Push
         public bool PressedY = false; // Toggle Push All Peds
         public bool PressedZ = false; // give all peds axe and go to player toggle
+        public bool PressedJ = false; // all peds attack player
         public CarsMod()
         {
             /*
@@ -115,6 +116,22 @@ namespace CarsFlyMod
                 {
                     
                 }
+
+                if(PressedJ == true) // all peds attack player
+                {
+                    if(p.IsInVehicle())
+                    {
+                        p.Task.GoTo(Game.Player.Character);
+                        p.Task.FightAgainst(Game.Player.Character);
+                    }
+                    p.Weapons.Give(WeaponHash.APPistol, 1, true, true);
+                    p.Task.GoTo(Game.Player.Character);
+                    p.Task.FightAgainst(Game.Player.Character);
+                }
+                else
+                {
+
+                }
             }
         }
 
@@ -173,6 +190,17 @@ namespace CarsFlyMod
                 else
                 {
                     PressedZ = false;
+                }
+            }
+            if (e.KeyCode == Keys.J)
+            {
+                if (PressedJ == false)
+                {
+                    PressedJ = true;
+                }
+                else
+                {
+                    PressedJ = false;
                 }
             }
 

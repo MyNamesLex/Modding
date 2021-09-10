@@ -1,0 +1,5 @@
+E = Pull Cars towards the player
+T = Push cars away from the player
+Y = Push all peds and kill all peds in cars
+Z = Give all peds a battle axe and leave thir cars
+J = All peds attack player
