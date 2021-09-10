@@ -1,4 +1,4 @@
-E = pull cars
-T = push cars
+E = Pull cars
+T = Push cars
 Y = Push all peds
-Z = give all peds a battle axe and stare at the player or walk to the player
+Z = Give all peds a battle axe and stare at the player or walk to the player
