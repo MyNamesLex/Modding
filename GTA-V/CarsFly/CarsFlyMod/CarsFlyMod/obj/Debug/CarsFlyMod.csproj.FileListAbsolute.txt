@@ -1,0 +1,10 @@
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\obj\Debug\CarsFlyMod.csproj.AssemblyReference.cache
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\obj\Debug\CarsFlyMod.csproj.CoreCompileInputs.cache
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\bin\Debug\CarsFlyMod.exe.config
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\bin\Debug\CarsFlyMod.exe
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\bin\Debug\CarsFlyMod.pdb
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\obj\Debug\CarsFlyMod.csproj.CopyComplete
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\obj\Debug\CarsFlyMod.exe
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\obj\Debug\CarsFlyMod.pdb
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\bin\Debug\ScriptHookVDotNet3.dll
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\CarsFly\CarsFlyMod\CarsFlyMod\bin\Debug\ScriptHookVDotNet3.xml
