@@ -25,8 +25,6 @@ namespace CarsFlyMod
         public bool PressedY = false; // Toggle Push All Peds
         public bool PressedZ = false; // give all peds axe and go to player toggle
         public bool PressedJ = false; // all peds attack player
-        public Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
-        public Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
         public CarsMod()
         {
             /*
@@ -41,6 +39,8 @@ namespace CarsFlyMod
         }
         public void OnTick(object sender, EventArgs e)
         {
+            Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
+            Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
             //menu
             /*
             if(modMenuPool != null)
@@ -51,7 +51,7 @@ namespace CarsFlyMod
 
             //vehicle effects
 
-            foreach(Vehicle v in nearbyCars)
+            foreach (Vehicle v in nearbyCars)
             {
                 if (PressedE == true) // pull cars
                 {
@@ -91,7 +91,7 @@ namespace CarsFlyMod
                 if(PressedZ == true) // give battleaxe and go to player
                 {
                     p.Weapons.Give(WeaponHash.BattleAxe, 1, true, true);
-                    p.Task.GoTo(Game.Player.Character);
+                    p.Task.LookAt(Game.Player.Character);
                 }
                 else
                 {
@@ -99,19 +99,21 @@ namespace CarsFlyMod
                 }
 
                 if(PressedJ == true) // all peds attack player
-                { 
+                {
                     p.Weapons.Give(WeaponHash.Pistol, 1, true, true);
                     p.Task.FightAgainst(Game.Player.Character);
                 }
                 else
                 {
-
+                    
                 }
             }
         }
 
         public void OnKeyDown(object sender, KeyEventArgs e)
         {
+            Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
+            Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
             // call menu
             /*
             if(e.KeyCode == Keys.F10 && !modMenuPool.IsAnyMenuOpen())
@@ -122,7 +124,7 @@ namespace CarsFlyMod
 
             //button toggles
 
-            if(e.KeyCode == Keys.E)
+            if (e.KeyCode == Keys.E)
             {
                 if (PressedE == false)
                 {
@@ -164,6 +166,10 @@ namespace CarsFlyMod
                 }
                 else
                 {
+                    foreach (Ped p in nearbyPeds)
+                    {
+                        p.Task.WanderAround();
+                    }
                     PressedZ = false;
                 }
             }
@@ -175,6 +181,10 @@ namespace CarsFlyMod
                 }
                 else
                 {
+                    foreach (Ped p in nearbyPeds)
+                    {
+                        p.Task.WanderAround();
+                    }
                     PressedJ = false;
                 }
             }
