@@ -128,7 +128,7 @@ namespace CarsFlyMod
                 }
                 else
                 {
-
+                    p.Task.WanderAround();
                 }
             }
         }
