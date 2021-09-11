@@ -91,7 +91,7 @@ namespace CarsFlyMod
                 if(PressedZ == true) // give battleaxe and go to player
                 {
                     p.Weapons.Give(WeaponHash.BattleAxe, 1, true, true);
-                    p.Task.LookAt(Game.Player.Character);
+                    p.Task.GoTo(Game.Player.Character);
                 }
                 else
                 {
