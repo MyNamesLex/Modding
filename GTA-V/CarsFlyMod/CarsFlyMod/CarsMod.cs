@@ -102,6 +102,7 @@ namespace CarsFlyMod
                 {
                     p.Weapons.Give(WeaponHash.Pistol, 1, true, true);
                     p.Task.FightAgainst(Game.Player.Character);
+                    p.ShootRate = 1000;
                 }
                 else
                 {
