@@ -25,6 +25,8 @@ namespace CarsFlyMod
         public bool PressedY = false; // Toggle Push All Peds
         public bool PressedZ = false; // give all peds axe and go to player toggle
         public bool PressedJ = false; // all peds attack player
+        public Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
+        public Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
         public CarsMod()
         {
             /*
@@ -46,13 +48,6 @@ namespace CarsFlyMod
                 modMenuPool.ProcessMenus();
             }
             */
-
-
-            //get nearby peds and cars
-
-            Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
-            Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
-
 
             //vehicle effects
 
@@ -86,14 +81,7 @@ namespace CarsFlyMod
             {
                 if (PressedY == true) // push peds
                 {
-                    if (p.IsInVehicle())
-                    {
-                        p.Task.WarpOutOfVehicle(p.CurrentVehicle);
-                    }
-                    else
-                    {
-                        p.ApplyForce((Game.Player.Character.ForwardVector * 9999) + (Game.Player.Character.UpVector * 9999));
-                    }
+                    p.ApplyForce((Game.Player.Character.ForwardVector * 9999) + (Game.Player.Character.UpVector * 9999));
                 }
                 else
                 {
@@ -103,32 +91,21 @@ namespace CarsFlyMod
                 if(PressedZ == true) // give battleaxe and go to player
                 {
                     p.Weapons.Give(WeaponHash.BattleAxe, 1, true, true);
-                    if (p.IsInVehicle())
-                    {
-                        p.Task.WarpOutOfVehicle(p.CurrentVehicle);
-                    }
-                    else
-                    {
-                        p.Task.GoTo(Game.Player.Character);
-                    }
+                    p.Task.GoTo(Game.Player.Character);
                 }
                 else
                 {
-                    
+
                 }
 
                 if(PressedJ == true) // all peds attack player
-                {
-                    if(p.IsInVehicle())
-                    {
-                        p.Task.FightAgainst(Game.Player.Character);
-                    }
+                { 
                     p.Weapons.Give(WeaponHash.Pistol, 1, true, true);
                     p.Task.FightAgainst(Game.Player.Character);
                 }
                 else
                 {
-                    p.Task.WanderAround();
+
                 }
             }
         }
@@ -187,6 +164,10 @@ namespace CarsFlyMod
                 }
                 else
                 {
+                    foreach (Ped p in nearbyPeds)
+                    {
+                        p.Task.ClearAllImmediately();
+                    }
                     PressedZ = false;
                 }
             }
@@ -198,6 +179,10 @@ namespace CarsFlyMod
                 }
                 else
                 {
+                    foreach (Ped p in nearbyPeds)
+                    {
+                        p.Task.ClearAllImmediately();
+                    }
                     PressedJ = false;
                 }
             }
