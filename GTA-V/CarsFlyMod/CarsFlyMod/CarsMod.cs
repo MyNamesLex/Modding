@@ -121,11 +121,9 @@ namespace CarsFlyMod
                 {
                     if(p.IsInVehicle())
                     {
-                        p.Task.GoTo(Game.Player.Character);
                         p.Task.FightAgainst(Game.Player.Character);
                     }
-                    p.Weapons.Give(WeaponHash.APPistol, 1, true, true);
-                    p.Task.GoTo(Game.Player.Character);
+                    p.Weapons.Give(WeaponHash.Pistol, 1, true, true);
                     p.Task.FightAgainst(Game.Player.Character);
                 }
                 else
