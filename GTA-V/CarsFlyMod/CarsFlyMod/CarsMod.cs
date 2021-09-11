@@ -88,7 +88,7 @@ namespace CarsFlyMod
                 {
                     if (p.IsInVehicle())
                     {
-                        p.ApplyForce((Game.Player.Character.ForwardVector * 9999) + (Game.Player.Character.UpVector * 9999));
+                        p.Task.WarpOutOfVehicle(p.CurrentVehicle);
                     }
                     else
                     {
@@ -105,7 +105,7 @@ namespace CarsFlyMod
                     p.Weapons.Give(WeaponHash.BattleAxe, 1, true, true);
                     if (p.IsInVehicle())
                     {
-                        p.Task.GoTo(Game.Player.Character);
+                        p.Task.WarpOutOfVehicle(p.CurrentVehicle);
                     }
                     else
                     {
