@@ -164,10 +164,6 @@ namespace CarsFlyMod
                 }
                 else
                 {
-                    foreach (Ped p in nearbyPeds)
-                    {
-                        p.Task.ClearAllImmediately();
-                    }
                     PressedZ = false;
                 }
             }
@@ -179,10 +175,6 @@ namespace CarsFlyMod
                 }
                 else
                 {
-                    foreach (Ped p in nearbyPeds)
-                    {
-                        p.Task.ClearAllImmediately();
-                    }
                     PressedJ = false;
                 }
             }
