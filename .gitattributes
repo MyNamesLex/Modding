@@ -1,4 +1,3 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.dll linguist-language=csharp       
-*.esp linguist-language=other
+*.dll linguist-language=csharp
