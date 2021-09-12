@@ -1,6 +1,6 @@
 # Modding
  
-Currently, I have modded Skyrim and GTAV, looking into modding Cyberpunk 2077 too when it becomes more accessible to mod
+Currently, I have modded Skyrim and GTAV, looking into modding more games for fun and to learn more about the game
 
 Skyrim - Skyrim Creation Kit
 
