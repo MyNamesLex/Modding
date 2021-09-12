@@ -2,3 +2,4 @@
 * text=auto
 $ dll .gitattributes
 *.dll linguist-language=csharp       
+*.esp linguist-detectable=true
