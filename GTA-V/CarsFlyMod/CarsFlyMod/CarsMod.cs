@@ -5,49 +5,59 @@ using System.Text;
 using System.Threading.Tasks;
 using GTA;
 using GTA.Math;
+using GTA.NaturalMotion;
 using GTA.Native;
-//using NativeUI;
+using NativeUI;
 using System.Windows.Forms;
 using System.Drawing;
 
 namespace CarsFlyMod
 {
-    class CarsMod : Script
+    public class CarsMod : Script
     {
-        // NativeUI namespace couldnt be found?
-
-        //public MenuPool modMenuPool;
-        //public UIMenu mainMenu;
-
-
+        MenuPool menuPool;
+        UIMenu modMenu;
+        UIMenuItem PushCarsItem;
         public bool PressedE = false; // Toggle Car Pull
         public bool PressedT = false; // Toggle Car Push
         public bool PressedY = false; // Toggle Push All Peds
         public bool PressedZ = false; // give all peds axe and go to player toggle
         public bool PressedJ = false; // all peds attack player
+        public bool PressedL = false; // everything invisible
         public CarsMod()
         {
             /*
-            modMenuPool = new MenuPool();
-            mainMenu = new UIMenu("Mod Menu", "Select an option!");
-            modMenuPool.Add(mainMenu);
-            */
+            modMenu = new UIMenu("Mod Menu", "Test");
+            menuPool.Add(modMenu);
 
+            PushCarsItem = new UIMenuItem("Push Cars", "Pushes Cars In Direction Your Facing");
+            modMenu.AddItem(PushCarsItem);
+            */
             Tick += OnTick;
             KeyDown += OnKeyDown;
             KeyUp += OnKeyUp;
+           // menuPool = new MenuPool();
+            //modMenu.OnItemSelect += ItemSelecterEvent;
         }
+
+        void ItemSelecterEvent(UIMenu sender, UIMenuItem item, int index)
+        {
+            if(item == PushCarsItem)
+            {
+                PushCars();
+            }
+        }
+
         public void OnTick(object sender, EventArgs e)
         {
+
+            if(menuPool != null)
+            {
+                menuPool.ProcessMenus();
+            }
+
             Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
             Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
-            //menu
-            /*
-            if(modMenuPool != null)
-            {
-                modMenuPool.ProcessMenus();
-            }
-            */
 
             //vehicle effects
 
@@ -63,12 +73,21 @@ namespace CarsFlyMod
                 {
 
                 }
-                
-                if(PressedT == true) // push cars
+
+                if (PressedT == true) // push cars
                 {
                     v.ApplyForce((Game.Player.Character.ForwardVector * 10) + (Game.Player.Character.UpVector * 10));
                 }
 
+                else
+                {
+
+                }
+
+                if(PressedL == true) // invisible
+                {
+                    v.Opacity = 0;
+                }
                 else
                 {
 
@@ -92,6 +111,7 @@ namespace CarsFlyMod
                 {
                     p.Weapons.Give(WeaponHash.BattleAxe, 1, true, true);
                     p.Task.GoTo(Game.Player.Character);
+                    p.AlwaysKeepTask = true;
                 }
                 else
                 {
@@ -100,14 +120,44 @@ namespace CarsFlyMod
 
                 if(PressedJ == true) // all peds attack player
                 {
-                    p.Weapons.Give(WeaponHash.Pistol, 1, true, true);
+                    p.Weapons.Give(WeaponHash.AssaultRifle, 1, true, true);
                     p.Task.FightAgainst(Game.Player.Character);
-                    p.ShootRate = 1000;
+                    p.AlwaysKeepTask = true;
+                    p.ShootRate = 500;
                 }
                 else
                 {
-                    
+
                 }
+
+                if (PressedL == true) // invisible
+                {
+                    p.Opacity = 0;
+                    if(Game.Player.Character.IsInVehicle())
+                    {
+                        Game.Player.Character.CurrentVehicle.Opacity = 0;
+                    }
+                }
+                else
+                {
+
+                }
+            }
+
+            // player impact
+            if(PressedL == true)
+            {
+                Game.Player.Character.Opacity = 0;
+            }
+        }
+
+        public void PushCars()
+        {
+          //  Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
+            Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
+            foreach (Vehicle v in nearbyCars)
+            {
+                v.ApplyForce((Game.Player.Character.ForwardVector * 10) + (Game.Player.Character.UpVector * 10));
             }
         }
 
@@ -115,13 +165,11 @@ namespace CarsFlyMod
         {
             Ped[] nearbyPeds = World.GetNearbyPeds(Game.Player.Character, 9999);
             Vehicle[] nearbyCars = World.GetNearbyVehicles(Game.Player.Character, 1000);
-            // call menu
-            /*
-            if(e.KeyCode == Keys.F10 && !modMenuPool.IsAnyMenuOpen())
+
+            if(e.KeyCode == Keys.F10)
             {
-                mainMenu.Visible = !mainMenu.Visible;
+                modMenu.Visible = !modMenu.Visible;
             }
-            */
 
             //button toggles
 
@@ -187,6 +235,30 @@ namespace CarsFlyMod
                         p.Task.WanderAround();
                     }
                     PressedJ = false;
+                }
+            }
+            if(e.KeyCode == Keys.L)
+            {
+                if(PressedL == false)
+                {
+                    PressedL = true;
+                }
+                else
+                {
+                    foreach (Ped p in nearbyPeds)
+                    {
+                        p.ResetOpacity();
+                    }
+                    foreach (Vehicle v in nearbyCars)
+                    {
+                        v.ResetOpacity();
+                    }
+                    if (Game.Player.Character.IsInVehicle())
+                    {
+                        Game.Player.Character.CurrentVehicle.ResetOpacity();
+                    }
+                    Game.Player.Character.ResetOpacity();
+                    PressedL = false;
                 }
             }
 
