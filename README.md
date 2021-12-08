@@ -6,4 +6,4 @@ Skyrim - Skyrim Creation Kit
 
 GTAV - C# using <a href="https://www.gta5-mods.com/tools/script-hook-v">Scripthook.API</a>
 
-Cyberpunk - (Currently looking into Lua using <a href="https://wiki.redmodding.org/cyber-engine-tweaks/">Cyber Engine Tweaks</a>
+Cyberpunk - Currently looking into Lua using <a href="https://wiki.redmodding.org/cyber-engine-tweaks/">Cyber Engine Tweaks</a>
