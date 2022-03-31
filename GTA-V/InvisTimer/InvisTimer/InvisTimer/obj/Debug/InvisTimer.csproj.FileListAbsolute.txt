@@ -1,0 +1,7 @@
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\bin\Debug\InvisTimer.dll
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\bin\Debug\InvisTimer.pdb
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\bin\Debug\ScriptHookVDotNet3.dll
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\obj\Debug\InvisTimer.csproj.CoreCompileInputs.cache
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\obj\Debug\InvisTimer.csproj.CopyComplete
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\obj\Debug\InvisTimer.dll
+F:\Outside University Game Dev Stuff\Modding\GTA V Mods\Mods\InvisTimer\InvisTimer\InvisTimer\obj\Debug\InvisTimer.pdb
