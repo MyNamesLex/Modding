@@ -51,9 +51,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NativeUI">
-      <HintPath>..\..\..\..\..\..\..\Games\EpicLauncher Games\GTAV\scripts\NativeUI.dll</HintPath>
-    </Reference>
     <Reference Include="ScriptHookVDotNet3, Version=3.4.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Games\EpicLauncher Games\GTAV\ScriptHookVDotNet3.dll</HintPath>

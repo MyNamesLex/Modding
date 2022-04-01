@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using GTA;
 using GTA.Math;
-using NativeUI;
 using GTA.NaturalMotion;
 using GTA.Native;
 using System.Windows.Forms;
@@ -15,13 +14,10 @@ namespace CarsFlyMod
 {
     public class CarsMod : Script
     {
-        /*
-        MenuPool menuPool;
-        UIMenu modMenu;
-        UIMenuItem PushCarsItem;
-        */
+
         public bool PressedE = false; // Toggle Car Pull
         public bool PressedT = false; // Toggle Car Push
+
         public CarsMod()
         {
             Tick += OnTick;
