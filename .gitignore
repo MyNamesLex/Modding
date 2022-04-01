@@ -1,6 +1,3 @@
-**/obj/**
-**/bin/**
-
 # Visual Studio cache directory
 .vs/
 
@@ -53,5 +50,3 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-*.csproj
-*InvisTimer.csproj
