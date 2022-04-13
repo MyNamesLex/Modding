@@ -17,6 +17,8 @@ namespace ObjectGun
         public bool EntityOnlyMode = false;
         public bool AllGunsMode = false;
         public bool AllPedsObjectMode = false;
+        public List<Entity> entities;
+        public List<Vehicle> veh;
         public ObjectGun()
         {
             this.Tick += onTick;
@@ -31,6 +33,8 @@ namespace ObjectGun
 
         public void onTick(object sender, EventArgs e)
         {
+            entities = World.GetNearbyEntities(Game.Player.Character.Position, 999999).ToList();
+            veh = World.GetNearbyVehicles(Game.Player.Character, 999999).ToList();
             if (StartBool == false)
             {
                 Start();
@@ -68,9 +72,6 @@ namespace ObjectGun
 
         public void PedObjectFire(Ped p)
         {
-            Entity[] entities = World.GetAllEntities();
-            Vehicle[] veh = World.GetAllVehicles();
-
             Random r = new Random();
             int rng = r.Next(0, 2);
 
@@ -86,7 +87,7 @@ namespace ObjectGun
 
             if (rng == 0)
             {
-                int rngE = r.Next(0, entities.Length);
+                int rngE = r.Next(0, entities.Count);
                 Entity selectedEntity = entities[rngE];
                 selectedEntity = World.CreateProp(selectedEntity.Model, p.Position + p.ForwardVector * 5, true, false);
                 selectedEntity.MarkAsNoLongerNeeded();
@@ -96,7 +97,7 @@ namespace ObjectGun
 
             else
             {
-                int rngV = r.Next(0, veh.Length);
+                int rngV = r.Next(0, veh.Count);
                 Vehicle selectedVehicle = veh[rngV];
                 selectedVehicle = World.CreateVehicle(selectedVehicle.Model, p.Position + p.ForwardVector * 5);
                 selectedVehicle.MarkAsNoLongerNeeded();
@@ -107,8 +108,6 @@ namespace ObjectGun
 
         public void ObjectFire()
         {
-            Entity[] entities = World.GetAllEntities();
-            Vehicle[] veh = World.GetAllVehicles();
 
             Random r = new Random();
             int rng = r.Next(0, 2);
@@ -125,7 +124,7 @@ namespace ObjectGun
 
             if (rng == 0)
             {
-                int rngE = r.Next(0, entities.Length);
+                int rngE = r.Next(0, entities.Count);
                 Entity selectedEntity = entities[rngE];
                 selectedEntity = World.CreateProp(selectedEntity.Model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5, true, false);
                 selectedEntity.MarkAsNoLongerNeeded();
@@ -135,7 +134,7 @@ namespace ObjectGun
 
             else
             {
-                int rngV = r.Next(0, veh.Length);
+                int rngV = r.Next(0, veh.Count);
                 Vehicle selectedVehicle = veh[rngV];
                 selectedVehicle = World.CreateVehicle(selectedVehicle.Model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5);
                 selectedVehicle.MarkAsNoLongerNeeded();
