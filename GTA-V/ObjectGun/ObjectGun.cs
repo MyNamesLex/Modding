@@ -35,6 +35,7 @@ namespace ObjectGun
         {
             entities = World.GetNearbyEntities(Game.Player.Character.Position, 999999).ToList();
             veh = World.GetNearbyVehicles(Game.Player.Character, 999999).ToList();
+
             if (StartBool == false)
             {
                 Start();
@@ -98,12 +99,12 @@ namespace ObjectGun
             else
             {
                 int rngV = r.Next(0, veh.Count);
-                Vehicle selectedVehicle = veh[rngV];
-                selectedVehicle = World.CreateVehicle(selectedVehicle.Model, p.Position + p.ForwardVector * 5);
-                selectedVehicle.MarkAsNoLongerNeeded();
-                Vector3 push = (p.ForwardVector * 9999);
-                selectedVehicle.ApplyForce(push);
+                Model model = veh[rngV].Model;
+                Vehicle selectedVehicle = World.CreateVehicle(model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5);
+                Vector3 push = (GameplayCamera.ForwardVector * 9999);
+               // selectedVehicle.MarkAsNoLongerNeeded();
             }
+
         }
 
         public void ObjectFire()
@@ -135,12 +136,15 @@ namespace ObjectGun
             else
             {
                 int rngV = r.Next(0, veh.Count);
-                Vehicle selectedVehicle = veh[rngV];
-                selectedVehicle = World.CreateVehicle(selectedVehicle.Model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5);
-                selectedVehicle.MarkAsNoLongerNeeded();
+                Model model = veh[rngV].Model;
+                Vehicle selectedVehicle = World.CreateVehicle(model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5);
                 Vector3 push = (GameplayCamera.ForwardVector * 9999);
-                selectedVehicle.ApplyForce(push);
+                //selectedVehicle.MarkAsNoLongerNeeded();
+                //selectedVehicle.ApplyForce(push);
+
             }
+
+
         }
         private void onKeyUp(object sender, KeyEventArgs e)
         {
