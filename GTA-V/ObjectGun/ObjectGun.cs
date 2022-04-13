@@ -100,7 +100,7 @@ namespace ObjectGun
             {
                 int rngV = r.Next(0, veh.Count);
                 Model model = veh[rngV].Model;
-                Vehicle selectedVehicle = World.CreateVehicle(model, Game.Player.Character.Position + Game.Player.Character.ForwardVector * 5);
+                Vehicle selectedVehicle = World.CreateVehicle(model, p.Position + p.ForwardVector * 5);
                 Vector3 push = (GameplayCamera.ForwardVector * 9999);
                // selectedVehicle.MarkAsNoLongerNeeded();
             }
