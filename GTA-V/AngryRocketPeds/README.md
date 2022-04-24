@@ -1,0 +1,1 @@
+Credit to <a href = "https://github.com/Toooble"> Toooble </a> for bug fixes and watching me spend 2 hours without realising I forgot to start the timer in the Start() function :)

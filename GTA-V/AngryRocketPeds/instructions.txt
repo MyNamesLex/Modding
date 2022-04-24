@@ -1,0 +1,3 @@
+Runs as soon as the scripts load
+
+Makes all pedestrians within a radius shoot rockets at the player for a random amount of time and after a random amount of time has passed
