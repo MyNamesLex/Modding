@@ -1,3 +1,5 @@
+# PedsEffects
+
 Y = Push all peds and kill all peds in cars
 Z = Give all peds a battle axe and leave their cars
 J = All peds attack player

@@ -1,3 +1,5 @@
+# ObjectGun
+
 This mod runs when the scripts load
 
 This gun makes it so the player's pistol shoots out random entities and cars
