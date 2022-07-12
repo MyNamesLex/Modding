@@ -1,3 +1,0 @@
-Runs as soon as the scripts load
-
-Aims to be as annoying as possible
