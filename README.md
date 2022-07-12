@@ -1,8 +1,6 @@
 # Modding
  
-Currently, I have modded Skyrim and GTAV, looking into modding more games for fun and to learn more about the game
-
-Skyrim - Skyrim Creation Kit
+Currently, I have modded GTAV and Cyberpunk 2077, looking into modding more games for fun and to learn more about the game
 
 GTAV - C# using <a href="https://www.gta5-mods.com/tools/script-hook-v">Scripthook.API</a>
 
