@@ -55,7 +55,7 @@ void ScriptMain();
 #include <iostream>
 #include <fstream>
 
-int SpawnRate; // HOW OFTEN BEARS SHOULD SPAWNS, READ FROM 'SpawnStats.ini'
+int SpawnRate; // HOW OFTEN ANIMALS SHOULD SPAWNS, READ FROM 'SpawnStats.ini'
 
 // ANIMAL COORDS:
 int offsetX;
@@ -64,7 +64,7 @@ int offsetZ;
 
 char* AnimalName;
 
-bool HasSpawned = false; // HAS AN ANIMAL SPAWNED, STOP DUPLICATE BEARS
+bool HasSpawned = false; // HAS AN ANIMAL SPAWNED, STOP DUPLICATE ANIMALS
 
 int lines; // INT TO GO THROUGH EACH LINE IN 'SpawnStats.ini'
 
