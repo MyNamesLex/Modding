@@ -4,7 +4,7 @@ I have currently modded GTA V, Cyberpunk 2077, Skyrim and others, looking into m
 
 To download a build or directory, use this link <a href="https://download-directory.github.io/">here</a>
 
-## Mods
+## Games
 
 GTA V - C# using <a href="https://dev-c.com/gtav/scripthookv">Scripthook</a>
 
