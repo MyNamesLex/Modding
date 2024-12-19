@@ -1,6 +1,6 @@
 # Modding
  
-I have currently modded GTA V, Cyberpunk 2077, Skyrim and others, looking into modding more games for fun and to learn more about the game
+I have currently modded GTA V, Cyberpunk 2077, Skyrim and others
 
 To download a build or directory, use this link <a href="https://download-directory.github.io/">here</a>
 
